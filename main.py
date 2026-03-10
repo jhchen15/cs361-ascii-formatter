@@ -75,7 +75,7 @@ def format_table(data: TableData):
     separator_row = ""
     for col in range(0, len(data.columns)):
         header_row += f"| {data.columns[col]:>{column_widths[col]}} "
-        separator_row += "| " + ("-" * column_widths[col]) + " "
+        separator_row += "|" + ("-" * (column_widths[col] + 2))
     header_row += "|"
     separator_row += "|"
     formatted_table.append(header_row)
