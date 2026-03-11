@@ -1,4 +1,4 @@
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI
 from pydantic import BaseModel, model_validator
 
 app = FastAPI()
@@ -107,15 +107,3 @@ if __name__ == "__main__":
     print(flatten_columns(columns=test_table["columns"], data=test_table["data"]))
     cols = flatten_columns(columns=test_table["columns"], data=test_table["data"])
     print(calculate_col_widths(cols))
-
-    test_table = {
-        "columns": ["col1", "col2", "col3"],
-        "data": [
-            {"col1": 1, "col2": 2, "col3": 3},
-            {"col1": 4, "col2": 5, "col3": 6},
-            {"col1": 7, "col2": 8, "col3": 9},
-        ]
-    }
-
-    formatted_table = format_table(test_table)
-    print(formatted_table)
